@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
+import Card from './card'
 
-function Cardgrid() {
+function Cardgrid({ onCardClick }) {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -29,12 +30,9 @@ function Cardgrid() {
   }, []);
 
   return (
-    <div>
+    <div className="card-grid">
         {cards.map(card => (
-          <div key={card.id}>
-            <h3>{card.name}</h3>
-            <img src={card.image} alt={card.name} />
-          </div>
+          <Card key={card.id} card={card} onCardClick={onCardClick} />
         ))}
     </div>
   )

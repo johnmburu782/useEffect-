@@ -1,17 +1,11 @@
 import {useEffect, useState} from 'react'
 
-function ScoreBoard() {
-  const [score, setScore] = useState(0);
-   function updateScore () {
-      setScore(score + 1)
-
-   }
-    useEffect (() => {
-      scoreBoard()
-    }, [score])
+function ScoreBoard({ score }) {
       
   return (
-    <div className="score-board">,scoreBoard={scoreBoard} score={score}</div>
+    <div className="score-board">
+      <h2>Score: {score}</h2>
+    </div>
   )
 }
 
